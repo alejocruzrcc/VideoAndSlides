@@ -1,0 +1,273 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <link rel="stylesheet" href="css/materialize.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="css/estilo.css">
+    </head>
+
+    <body>
+      <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="js/pdf.js"></script>
+
+        <div id="principal" class="container vertical-align">
+          <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a>Sass</a></li>
+          <li><a>Components</a></li>
+          <li><a>JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
+<br>
+        <div class="row">
+            <div class="col s1">
+              <div>
+                <img class="responsive-img" height="70" width="70" src="images/calendario.jpg"/>
+                <img class="responsive-img" height="70" width="70" src="images/calendario.jpg"/>
+                <img class="responsive-img" height="70" width="70" src="images/calendario.jpg"/>
+              </div>
+            </div>
+            <div class="col s11">
+              <div>Titulo</div>
+              <div class="row">
+                <div class="col s2">Info</div>
+                <div class="col s2">Info</div>
+                <div class="col s2">Info</div>
+                <div class="col s2">Info</div>
+                <div class="col s2">Info</div>
+                <div class="col s2">Info</div>
+              </div>
+              <h5>La actividad para el día de hoy</h5>
+              <div class="row">
+                <div  class="col s7 ">
+                    <video class="responsive-video" id="video" width="650" height="380" preload="auto">
+                    <track id="subtes" label="Español" kind="subtitles" srclang="es" src="subt/subs_es.vtt">
+                    <track id="subten" label="Ingles" kind="subtitles" srclang="en" src="subt/subs_en.vtt">
+                    </video>
+                    <div class="row">
+                      <div class="col s1"><i id="play-pause" class="tiny material-icons">play_arrow</i></div>
+                      <div class="col s1">
+                       <span id="horas"></span><span id="minutos">00</span>:<span id="segundos">00</span>
+                      </div>
+                      <div id="seekbar" class="col s5">
+                        <form action="#">
+                            <p class="range-field"><input id="seek-bar" type="range" value="0"></p>
+                          </form>
+                      </div>
+                      <div class="col s1">
+                        <span id="minutos2" >0</span>:<span id="segundos2" >0</span>
+                      </div>
+                      <div class="col s1"><i id="mute" class="tiny material-icons">volume_up</i></div>
+                      <div class="col s2">
+                        <form action="#">
+                            <p class="range-field">
+                              <input id="volume-bar" type="range" min="0" max="1" step="0.1" value="1">
+                            </p>
+                          </form></div>
+                      <div class="col s1">
+
+                        <i href='#' data-activates='dropdown1' class="tiny material-icons dropdown-button">settings</i>
+                        <ul id='dropdown1' class='dropdown-content' width>
+                        <li><a id="repetir">No</a></li>
+                        <li>
+                          <div class="row">
+                            <div class="col s6"><i id="atras" class="tiny material-icons">fast_rewind</i></div>
+                            <div class="col s6"><i id="adela" class="tiny material-icons">fast_forward</i></div>
+                          </div>
+                        </li>
+                        <li><a>Velocidad</a>
+                            <ul>
+                            <li><a id="slow">Slow</a></li>
+                            <li><a id="normal">Normal</a></li>
+                            <li><a id="fast">Fast</a></li>
+                            </ul>
+                       </li>
+                        <li><a id="captions">Subtítulos</a>
+                                <ul>
+                            <li><a id="es">Español</a></li>
+                            <li><a id="en">English</a></li>
+                            <li><a id="off">Off</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a>Tamaño</a>
+                            <ul>
+                            <li><a id="small">Small</a></li>
+                            <li><a id="medium">Medium</a></li>
+                            <li><a id="full-screen">Full Sreen</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Calidad</a>
+                            <ul>
+                            <li><a id="mbaja">144p</a></li>
+                            <li><a id="baja">244p</a></li>
+                            <li><a id="buena">360p</a></li>
+                            <li><a id ="excelente">480p</a></li>
+                            <li><a id ="excelentea">720p</a></li>
+                            <li><a id ="excelenteb">1080p</a></li>
+                            <li><a id ="excelentec">1440p</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s5">
+                  <div>
+                  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+                  <div>
+                  <a class="waves-effect waves-light btn" id="prev" onclick="goPrevious()">Previous</a>
+                  <a class="waves-effect waves-light btn" id="next" onclick="goNext()">Next</a>
+                  &nbsp; &nbsp;
+                  <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+                </div>
+                </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s7">
+                  <nav >
+                    <div class="nav-wrapper">
+                      <form >
+                        <div class="input-field">
+                          <input id="search" type="search" required>
+                          <label for="search"><i class="material-icons">search</i></label>
+                          <i class="material-icons">close</i>
+                        </div>
+                      </form>
+                    </div>
+                  </nav>
+                </div>
+                <div class="col s5">
+                  <li><a id="rel1">Tema 1</a></li>
+                  <li><a id="rel2">Tema 2</a></li>
+                  <li><a>Tema 3</a></li>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+
+
+ var videoPlayer = document.getElementById("video");
+
+    var tema1 = document.getElementById("rel1");
+    tema1.addEventListener("click", function(){
+        pageNum =5;
+        renderPage(pageNum);
+        videoPlayer.currentTime = 40;
+
+    });
+
+      var tema2 = document.getElementById("rel2");
+    tema2.addEventListener("click", function(){
+        pageNum =8;
+        renderPage(pageNum);;
+        videoPlayer.currentTime = 60;
+
+    });
+
+
+
+    //
+    // NOTE:
+    // Modifying the URL below to another server will likely *NOT* work. Because of browser
+    // security restrictions, we have to use a file server with special headers
+    // (CORS) - most servers don't support cross-origin browser requests.
+    //
+    var invocation= new XMLHttpRequest;
+    var url = 'http://www.uv.es/bellochc/pdf/Presentaciones%20multimedia.pdf';
+    callOtherDomain();
+    function callOtherDomain() {
+  if(invocation) {
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send();
+  }
+}
+    //
+    // Disable workers to avoid yet another cross-origin issue (workers need the URL of
+    // the script to be loaded, and currently do not allow cross-origin scripts)
+    //
+    PDFJS.disableWorker = true;
+
+    var pdfDoc = null,
+        pageNum = 1,
+        scale = 0.8,
+        canvas = document.getElementById('the-canvas'),
+        ctx = canvas.getContext('2d');
+
+    //
+    // Get page info from document, resize canvas accordingly, and render page
+    //
+    function renderPage(num) {
+      // Using promise to fetch the page
+      pdfDoc.getPage(num).then(function(page) {
+        var viewport = page.getViewport(scale);
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        // Render PDF page into canvas context
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        page.render(renderContext);
+      });
+
+      // Update page counters
+      document.getElementById('page_num').textContent = pageNum;
+      document.getElementById('page_count').textContent = pdfDoc.numPages;
+    }
+
+    //
+    // Go to previous page
+    //
+    function goPrevious() {
+      if (pageNum <= 1)
+        return;
+      pageNum--;
+      renderPage(pageNum);
+    }
+
+    //
+    // Go to next page
+    //
+    function goNext() {
+      if (pageNum >= pdfDoc.numPages)
+        return;
+      pageNum++;
+      renderPage(pageNum);
+    }
+
+    //
+    // Asynchronously download PDF as an ArrayBuffer
+    //
+    PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+      pdfDoc = _pdfDoc;
+      renderPage(pageNum);
+      document.onkeyup = handleArrowKeys;
+    });
+  </script>
+      <!--Import jQuery before materialize.js-->
+
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/mireproductor.js"></script>
+    </body>
+  </html>

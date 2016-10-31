@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<corporate>
+	<empoyee>
+		<name>Alejo</name>
+		<name>Oscar</name>
+		<age>22</age>
+	</empoyee>
+</corporate>
