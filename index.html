@@ -75,48 +75,43 @@
                             </p>
                           </form></div>
                       <div class="col s1">
-
-                        <i href='#' data-activates='dropdown1' class="tiny material-icons dropdown-button">settings</i>
-                        <ul id='dropdown1' class='dropdown-content' width>
-                        <li><a id="repetir">No</a></li>
+                        <ul data-collapsible="accordion"  class='collapsible'>
+                        <i class="tiny material-icons">settings</i>
+                        <li><a class="collapsible-header" id="repetir">No Repetir</a></li>
                         <li>
-                          <div class="row">
-                            <div class="col s6"><i id="atras" class="tiny material-icons">fast_rewind</i></div>
-                            <div class="col s6"><i id="adela" class="tiny material-icons">fast_forward</i></div>
-                          </div>
+                            <a class="collapsible-header">Tiempo</a>
+                            <a id="atras" class="collapsible-body">Atrasar</a>
+                            <a id="adela" class="collapsible-body">Adelantar</a>
                         </li>
-                        <li><a>Velocidad</a>
-                            <ul>
-                            <li><a id="slow">Slow</a></li>
-                            <li><a id="normal">Normal</a></li>
-                            <li><a id="fast">Fast</a></li>
-                            </ul>
+                        <li>
+                            <a class="collapsible-header">Velocidad</a>
+                            <a class="collapsible-body" id="slow">Slow</a>
+                            <a class="collapsible-body" id="normal">Normal</a>
+                            <a class="collapsible-body" id="fast">Fast</a>
                        </li>
-                        <li><a id="captions">Subtítulos</a>
-                                <ul>
-                            <li><a id="es">Español</a></li>
-                            <li><a id="en">English</a></li>
-                            <li><a id="off">Off</a></li>
-                            </ul>
+                        <li>
+                            <a class="collapsible-header" id="captions">Subtítulos</a>
+                            <a class="collapsible-body" id="es">Español</a>
+                            <a class="collapsible-body" id="en">English</a>
+                            <a class="collapsible-body" id="off">Off</a>
                         </li>
 
-                        <li><a>Tamaño</a>
-                            <ul>
-                            <li><a id="small">Small</a></li>
-                            <li><a id="medium">Medium</a></li>
-                            <li><a id="full-screen">Full Sreen</a></li>
-                            </ul>
+                        <li>
+                            <a class="collapsible-header">Tamaño</a>
+                            <a class="collapsible-body" id="small">Small</a>
+                            <a class="collapsible-body" id="medium">Medium</a>
+                            <a class="collapsible-body" id="full-screen">Full Sreen</a>
+
                         </li>
-                        <li><a>Calidad</a>
-                            <ul>
-                            <li><a id="mbaja">144p</a></li>
-                            <li><a id="baja">244p</a></li>
-                            <li><a id="buena">360p</a></li>
-                            <li><a id ="excelente">480p</a></li>
-                            <li><a id ="excelentea">720p</a></li>
-                            <li><a id ="excelenteb">1080p</a></li>
-                            <li><a id ="excelentec">1440p</a></li>
-                            </ul>
+                        <li>
+                            <a class="collapsible-header">Calidad</a>
+                            <a class="collapsible-body" id="mbaja">144p</a>
+                            <a class="collapsible-body" id="baja">244p</a>
+                            <a class="collapsible-body" id="buena">360p</a>
+                            <a class="collapsible-body" id ="excelente">480p</a>
+                            <a class="collapsible-body" id ="excelentea">720p</a>
+                            <a class="collapsible-body" id ="excelenteb">1080p</a>
+                            <a class="collapsible-body" id ="excelentec">1440p</a>
                         </li>
                         </ul>
                         </div>
@@ -188,16 +183,10 @@
     // security restrictions, we have to use a file server with special headers
     // (CORS) - most servers don't support cross-origin browser requests.
     //
-    var invocation= new XMLHttpRequest;
+
     var url = 'http://www.uv.es/bellochc/pdf/Presentaciones%20multimedia.pdf';
-    callOtherDomain();
-    function callOtherDomain() {
-  if(invocation) {
-    invocation.open('GET', url, true);
-    invocation.onreadystatechange = handler;
-    invocation.send();
-  }
-}
+
+
     //
     // Disable workers to avoid yet another cross-origin issue (workers need the URL of
     // the script to be loaded, and currently do not allow cross-origin scripts)

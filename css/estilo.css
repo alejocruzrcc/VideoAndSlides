@@ -7,3 +7,12 @@ div{
 #principal{
   width: 100%;
 }
+
+ul li{
+  display:none;
+
+  cursor: pointer;
+}
+ul:hover li{
+  display:block;
+}
